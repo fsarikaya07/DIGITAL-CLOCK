@@ -13,13 +13,16 @@ function updateClock() {
     h = h - 12;
     ampm = "pm";
   }
+  h = h < 10 ? "0" + h : h;
+  m = m < 10 ? "0" + m : m;
+  s = s < 10 ? "0" + s : s;
+
   hourEl.innerText = h;
   minuteEl.innerText = m;
   secondEl.innerText = s;
   ampmEl.innerText = ampm;
-  setTimeout(()=>{
+  setTimeout(() => {
     updateClock();
-  },1000)
-
+  }, 1000);
 }
 updateClock();
